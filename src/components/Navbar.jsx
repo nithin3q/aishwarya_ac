@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/NavBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfoCircle, faEnvelope, faWandMagicSparkles, faPhone, faFan } from '@fortawesome/free-solid-svg-icons';
 import { NavHashLink } from "react-router-hash-link";
