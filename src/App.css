@@ -1,0 +1,231 @@
+.bg-gray-100{
+    background-color: #665d5d;
+}
+
+.bg-ac {
+    background: linear-gradient(to right, #ff9900 50%, #003366 50%);
+    padding: 40px 0px 0px 0;
+  }
+
+@media (max-width: 768px) {
+  .bg-ac {
+    background: linear-gradient(to bottom, #ff9900 50%, #003366 50%);
+    padding: 20px 0px 0px 0;
+  }
+}
+
+/* hero */
+.hero-section .bg-image {
+  background-image: url('https://kit.envalab-demos.com/colek/wp-content/uploads/2023/08/smiling-workman-looking-at-camera-while-repairing-2021-09-21-23-34-35-utc.jpg'); /* Replace with your background image URL */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  }
+  
+ /* Default styling for larger screens */
+
+
+.hero-section .card-container {
+  position: absolute;
+  bottom: -100px; /* Overlaps the background */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  z-index: 1;
+}
+
+.hero-section {
+  margin-bottom: 150px;
+}
+/* Styling for smaller devices */
+
+@media (max-width: 865px) {
+  .hero-section .card-container {
+    position: relative; /* Normal flow for small devices */
+    bottom: -200px !important;          /* No overlap */
+    left: 0;            /* Reset positioning */
+    transform: none;    /* Remove centering transform */
+    margin: 20px auto;  /* Center with margin */
+    width: 90%;         /* Use most of the screen width */
+  }
+  .hero-section {
+    margin-bottom: 200px;
+  }
+}
+@media (max-width: 525px) {
+  .hero-section .card-container {
+    position: relative; /* Normal flow for small devices */
+    bottom: -500px !important;          /* No overlap */
+    left: 0;            /* Reset positioning */
+    transform: none;    /* Remove centering transform */
+    margin: 20px auto;  /* Center with margin */
+    width: 90%;         /* Use most of the screen width */
+  }
+  .hero-section {
+    margin-bottom: 500px;
+  }
+}
+  
+  
+  
+  .btn-orange {
+    background-color: orange !important; 
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-orange:hover {
+    background-color: darkorange;
+    color: white;
+  }
+  
+  
+  /* .blue-bg {
+    background-color: #007bff; 
+    color: white;
+  }
+  
+  .orange-bg {
+    background-color: #dc3545; 
+    color: white;
+  } */
+  
+
+/* Services.css */
+
+
+.single-product-item {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.single-product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-image img {
+  border-radius: 8px;
+}
+
+.product-price span {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+/* Services.css */
+.bg-blue-1 {
+  --bs-bg-opacity: 1;
+  background-color: #003366 !important;
+}
+
+.bg-primary {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+}
+/* Footer Styles */
+.bg-dark-blue {
+  background-color: #003366;
+}
+
+.bg-orange {
+  background-color: #ff9900 !important;
+}
+
+footer {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.text-white {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+.list-unstyled li {
+  margin-bottom: 10px;
+}
+
+/* Add styles for the arrows */
+.fas.fa-angle-right {
+  color: #ffffff;
+  font-size: 12px;
+  margin-right: 8px;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #ff9900;
+}
+
+/* Hover effect on the contact card */
+.card-footer:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+.card-footer ul li a:hover {
+  color: #003366;
+}
+
+
+.orange-arrow{
+  color: #ff9900 !important;
+}
+
+/* contact.css */
+.bg-blue-11{
+  --bg-opacity: 1;
+  background-color: #304972 !important;
+}
+
+.text-blue{
+  color: #01317c !important;
+
+}
+
+
+/* about.css */
+.img-1 {
+  width: 85%;
+  height: 60vh !important;
+  border-radius: 12px;
+  /* box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9) !important; */
+  margin: 0px 50px 0px 50px  !important;
+}
+@media(max-width:768px){
+  .img-1 {
+    width: 100%;
+  margin: 0px  !important;
+
+    
+  }
+}
+
+.btn-warning {
+  background-color: #ff9900;
+  color: #ffffff;
+}
+
+.text-primary {
+  color: #0056b3;
+}
