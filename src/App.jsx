@@ -21,7 +21,7 @@ function App() {
     <div>
       <Router>
       <Navbar/>
-      <Home/>
+      {/* <Home/> */}
       <Hero/>
       <Services/>
       <ServicesSection/>

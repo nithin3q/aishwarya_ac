@@ -6,6 +6,7 @@ import image4 from "../assets/img/ac4.jpeg";
 import image5 from "../assets/img/ac5.jpeg";
 import image6 from "../assets/img/ac6.jpeg";
 import image7 from "../assets/img/ac7.jpeg";
+import image9 from "../assets/img/ac9.jpeg";
 
 const images = [
   {
@@ -29,12 +30,15 @@ const images = [
   {
     src: image7,
   },
+  {
+    src: image9,
+  },
 ];
 
 const ClientGallery = () => {
   return (
     <section className="container my-5">
-      <h1 className=" text-center display-4">Our Services</h1>
+      <h1 className=" text-center display-4">Our Work</h1>
       <div className="row g-4">
         {images.map((image, index) => (
           <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={index}>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Services = () => {
   return (
-    <section id="services" className="">
+    <section id="services" className="mb-5 mt-5">
       <div className="container">
         <div className="row text-center mb-5">
           <h1 className="display-4">Our Services</h1>
@@ -26,7 +26,7 @@ const Services = () => {
               <p className="product-price mb-3">
                 <strong>Free Service Calls</strong>
               </p>
-              <a href="contact.html" className="btn btn-primary bg-blue-1">
+              <a href="#contact" className="btn btn-primary bg-blue-1">
                 <i className="fas fa-phone-alt me-2"></i> Contact Now
               </a>
             </div>
@@ -49,7 +49,7 @@ const Services = () => {
               <p className="product-price mb-3">
                 <strong>Free Estimates</strong>
               </p>
-              <a href="contact.html" className="btn btn-primary bg-blue-1">
+              <a href="#contact" className="btn btn-primary bg-blue-1">
                 <i className="fas fa-phone-alt me-2"></i> Contact Now
               </a>
             </div>
@@ -72,7 +72,7 @@ const Services = () => {
               <p className="product-price mb-3">
                 <strong>24-Hour Emergency Service</strong>
               </p>
-              <a href="contact.html" className="btn btn-primary  bg-blue-1">
+              <a href="#contact" className="btn btn-primary  bg-blue-1">
                 <i className="fas fa-phone-alt me-2"></i> Contact Now
               </a>
             </div>

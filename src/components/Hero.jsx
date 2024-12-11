@@ -1,27 +1,42 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+import image8 from '../assets/img/ac8888.jpeg';
 
 function Hero() {
   return (
-    <section className="hero-section">
-      {/* Full-Height Background Section */}
-      <div className="bg-image d-flex align-items-center position-relative" style={{ height: '90vh' }}>
-        <div className="container">
-          <div className="text-left text-light">
-            <h1 className="fw-bold display-4">
-              Doorstep AC Repair and Service
-            </h1>
-            <p className="lead my-4">
-              Quick and reliable AC repair services delivered at your doorstep. Let us keep you comfortable.
-            </p>
-            <a href="#contact" className="btn btn-orange btn-lg">
-              <FontAwesomeIcon icon={faPhoneAlt} className="me-2" /> Contact Us
-            </a>
-          </div>
+    <section className="hero-section" id="home">
+      <div
+        className="bg-image d-flex align-items-center position-relative"
+        style={{
+          height: '90vh',
+          backgroundImage: `url(${image8})`,
+          
+        }}
+      >
+        {/* Orange Overlay */}
+        <div
+          className="overlay position-absolute w-100 h-100"
+          style={{
+            backgroundColor: 'rgba(255, 165, 0, 0.5)', // Orange color with transparency
+            top: 0,
+            left: 0,
+            zIndex: 1,
+          }}
+        ></div>
+
+        <div className="container position-relative text-left text-dark" style={{ zIndex: 2 }}>
+          <h1 className="fw-bold display-4 ">Doorstep AC Repair and Service</h1>
+          <p className="lead my-4 text-hero">
+            Quick and reliable AC repair services delivered at your doorstep. Let us keep you comfortable.
+          </p>
+          <a href="#contact" className="btn bg-blue-1 text-white btn-lg">
+            <FontAwesomeIcon icon={faPhoneAlt} className="me-2" /> Contact Us
+          </a>
         </div>
+
         {/* Overlaying Card Section */}
-        <div className="container position-absolute w-100 card-container">
+        <div className="container position-absolute w-100 card-container" style={{ bottom: '-80px', zIndex: 3 }}>
           <div className="card shadow p-4">
             <div className="row text-center">
               {/* Satisfaction Guarantee */}

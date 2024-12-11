@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import image10 from "../assets/img/ac10.jpeg";
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -36,7 +37,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="container my-5">
+    <section className="container my-5" id="faq">
       <div className="row align-items-center">
         {/* Left Side: FAQ Accordion */}
         <div className="col-12 col-md-6 mb-4 mb-md-0">
@@ -47,7 +48,7 @@ const FAQ = () => {
                 <div
                   className="card-header p-3"
                   style={{
-                    backgroundColor: "#f4faff",
+                    backgroundColor: "#ff9900",
                     borderRadius: "8px",
                     cursor: "pointer",
                   }}
@@ -68,13 +69,14 @@ const FAQ = () => {
                     activeIndex === index ? "show" : ""
                   }`}
                   style={{
-                    backgroundColor: "#ffffff",
+                    backgroundColor: "#003366",
                     padding: "10px 15px",
                     border: "1px solid #ddd",
                     borderRadius: "8px",
+                    color: "#fff",
                   }}
                 >
-                  <p className="text-muted">{faq.answer}</p>
+                  <p className="text-white">{faq.answer}</p>
                 </div>
               </div>
             ))}
@@ -84,11 +86,11 @@ const FAQ = () => {
         {/* Right Side: Image */}
         <div className="col-12 col-md-6 text-center">
           <img
-            src="https://kit.envalab-demos.com/colek/wp-content/uploads/2023/08/indian-man-setting-up-air-conditioner-RJ9VBA6.jpg"
+            src={image10}
             alt="AC Technician"
             className="img-fluid rounded shadow"
             style={{
-              maxWidth: "500px",
+              maxWidth: "300px",
               borderRadius: "12px",
               boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
             }}

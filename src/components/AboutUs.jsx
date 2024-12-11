@@ -2,7 +2,7 @@ import React from "react";
 import image1 from "../assets/img/ac8.jpeg";
 const AboutUs = () => {
   return (
-    <section className="container my-5">
+    <section className="container my-5" id="aboutus">
                  <h1 className="display-4 text-center mb-5">About Us</h1>
       <div className="row align-items-center">
         {/* Left Side: Image */}

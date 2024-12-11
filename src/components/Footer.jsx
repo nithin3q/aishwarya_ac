@@ -19,22 +19,22 @@ const Footer = () => {
             <h5 className="fw-bold mb-3">Quick Links</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="/about" className="text-secondary text-decoration-none fs-6">
+                <a href="#aboutus" className="text-secondary text-decoration-none fs-6">
                   <i className="fas fa-angle-right me-2 orange-arrow"></i> About Us
                 </a>
               </li>
               <li>
-                <a href="/services" className="text-secondary text-decoration-none fs-6">
+                <a href="#services" className="text-secondary text-decoration-none fs-6">
                   <i className="fas fa-angle-right me-2 orange-arrow"></i> Services
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-secondary text-decoration-none fs-6">
+                <a href="#contact" className="text-secondary text-decoration-none fs-6">
                   <i className="fas fa-angle-right me-2 orange-arrow"></i> Contact
                 </a>
               </li>
               <li>
-                <a href="/faq" className="text-secondary text-decoration-none fs-6">
+                <a href="#faq" className="text-secondary text-decoration-none fs-6">
                   <i className="fas fa-angle-right me-2 orange-arrow"></i> FAQs
                 </a>
               </li>
@@ -48,12 +48,12 @@ const Footer = () => {
               <ul className="list-unstyled">
                 <li>
                   <a href="tel:0008880000" className="text-dark text-decoration-none fs-6">
-                    <i className="fas fa-phone-alt me-2 "></i> Call Us: +91 9110321628
+                    <i className="fas fa-phone-alt me-2 "></i> Call Us: +91 99630 88128
                   </a>
                 </li>
                 <li>
                   <a href="mailto:needhelp@masim.com" className="text-dark text-decoration-none fs-6">
-                    <i className="fas fa-envelope me-2 "></i> Email: raju@gmail.com
+                    <i className="fas fa-envelope me-2 "></i> Email: rajutheking9999@gmail.com
                   </a>
                 </li>
                 <li>

@@ -62,8 +62,8 @@ const ContactUs = () => {
   };
 
   return (
-    <section className="container my-5">
-      <h2 className="text-center mb-4">Contact Us</h2>
+    <section className="container my-5" id="contact">
+                <h1 className="display-4 text-center mb-5">Contact Us</h1>
       <form onSubmit={handleSubmit} className="p-4 shadow rounded bg-blue-1">
         <div className="row">
           {/* Name Field */}
