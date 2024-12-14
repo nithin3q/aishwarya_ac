@@ -299,10 +299,9 @@ a:hover {
 }
 @media(max-width:768px){
   #home, #services, #aboutus, #contact {
-    margin-top: 60px; /* Adjust based on navbar height */
+    margin-top: 0px; /* Adjust based on navbar height */
   }
 }
-
 /* Improve navbar link hover effect */
 .nav-link {
   transition: color 0.3s ease, transform 0.3s ease;
@@ -317,3 +316,5 @@ a:hover {
   border-radius: 50%; 
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 } */
+
+

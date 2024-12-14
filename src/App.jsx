@@ -1,10 +1,9 @@
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Navbar from './components/Navbar';
-import Home from './components/Home';
 import Services from './components/Services';
 import Footer from './components/Footer';
 import Features from './components/Features';
