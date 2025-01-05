@@ -1,82 +1,79 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTools, faWrench, faFan, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Services = () => {
+  const services = [
+    {
+      icon: faTools,
+      title: "AC Installation",
+      description: "Professional installation service with expert technicians. We ensure proper setup and optimal performance of your AC unit.",
+      features: ["Free Installation Quote", "Same Day Service", "Quality Assurance"],
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7yxEhuXuV6tkgYj7LGGMvR9Dz2ULuIC9ELA&usqp=CAU"
+    },
+    {
+      icon: faWrench,
+      title: "Maintenance & Repair",
+      description: "Comprehensive maintenance and repair services to keep your AC running efficiently all year round.",
+      features: ["24/7 Emergency Repairs", "Scheduled Maintenance", "Genuine Parts"],
+      image: "https://swiftcare.pk/wp-content/uploads/2022/02/Top-10-Reasons-Why-Air-Conditioning-Service-is-Important-Featured.jpg"
+    },
+    {
+      icon: faFan,
+      title: "Cooling Solutions",
+      description: "Complete cooling solutions for residential and commercial spaces. Expert consultation for all your AC needs.",
+      features: ["Energy Efficiency", "Smart AC Solutions", "Professional Support"],
+      image: "https://content.jdmagicbox.com/comp/def_content/ac_repair_and_services/default-ac-repair-services-16.jpg"
+    }
+  ];
+
   return (
-    <section id="services" className="mb-5 mt-5">
+    <section id="services" className="services-section py-5">
       <div className="container">
-        <div className="row text-center mb-5">
-          <h1 className="display-4">Our Services</h1>
-          <p className="lead text-muted">Providing you with the best air conditioning services</p>
+        <div className="text-center mb-5">
+          <h6 className="text-primary fw-bold text-uppercase">Our Services</h6>
+          <h2 className="display-5 fw-bold mb-3">Professional AC Services</h2>
+          <div className="mx-auto" style={{ maxWidth: "700px" }}>
+            <p className="lead text-muted">Delivering excellence in air conditioning solutions with our comprehensive range of services</p>
+          </div>
         </div>
-        <div className="row">
-          {/* First Service */}
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="service-card p-4 border rounded shadow-sm">
-              <div className="service-image mb-3">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7yxEhuXuV6tkgYj7LGGMvR9Dz2ULuIC9ELA&usqp=CAU"
-                  alt="AC Installation"
-                  style={{ width: "100%", height: "268px", objectFit: "cover" }} // Fixed width and height
-                />
-              </div>
-              <h3 className="h5 mb-3">AC Installation</h3>
-              <p className="text-muted mb-3">
-                Professional air conditioning installation service. Get your AC installed quickly and efficiently.
-              </p>
-              <p className="product-price mb-3">
-                <strong>Free Service Calls</strong>
-              </p>
-              <a href="#contact" className="btn btn-primary bg-blue-1">
-                <i className="fas fa-phone-alt me-2"></i> Contact Now
-              </a>
-            </div>
-          </div>
 
-          {/* Second Service */}
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="service-card p-4 border rounded shadow-sm">
-              <div className="service-image mb-3">
-                <img
-                  src="https://swiftcare.pk/wp-content/uploads/2022/02/Top-10-Reasons-Why-Air-Conditioning-Service-is-Important-Featured.jpg"
-                  alt="Maintenance & Repair"
-                  style={{ width: "100%", height: "268px", objectFit: "cover" }} // Fixed width and height
-                />
+        <div className="row g-4">
+          {services.map((service, index) => (
+            <div key={index} className="col-lg-4 col-md-6">
+              <div className="service-card h-100 rounded-4 overflow-hidden">
+                <div className="service-image position-relative">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-100 service-img"
+                    style={{ height: "250px", objectFit: "cover" }}
+                  />
+                  <div className="service-overlay">
+                    <FontAwesomeIcon icon={service.icon} className="service-icon" />
+                  </div>
+                </div>
+                
+                <div className="service-content p-4">
+                  <h4 className="fw-bold mb-3">{service.title}</h4>
+                  <p className="text-muted mb-4">{service.description}</p>
+                  
+                  <ul className="feature-list mb-4">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="mb-2">
+                        <FontAwesomeIcon icon={faArrowRight} className="text-primary me-2" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <a href="#contact" className="btn btn-primary bg-blue-1 rounded-pill px-4">
+                    Get Service <FontAwesomeIcon icon={faArrowRight} className="ms-2" />
+                  </a>
+                </div>
               </div>
-              <h3 className="h5 mb-3">Maintenance & Repair</h3>
-              <p className="text-muted mb-3">
-                Keep your air conditioning system running at peak efficiency with regular maintenance and repairs.
-              </p>
-              <p className="product-price mb-3">
-                <strong>Free Estimates</strong>
-              </p>
-              <a href="#contact" className="btn btn-primary bg-blue-1">
-                <i className="fas fa-phone-alt me-2"></i> Contact Now
-              </a>
             </div>
-          </div>
-
-          {/* Third Service */}
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="service-card p-4 border rounded shadow-sm">
-              <div className="service-image mb-3">
-                <img
-                  src="https://content.jdmagicbox.com/comp/def_content/ac_repair_and_services/default-ac-repair-services-16.jpg"
-                  alt="Cooling & Heating Services"
-                  style={{ width: "100%", height: "268px", objectFit: "cover" }} // Fixed width and height
-                />
-              </div>
-              <h3 className="h5 mb-3">Cooling & Heating Services</h3>
-              <p className="text-muted mb-3">
-                Ensure comfort year-round with our 24-hour cooling and heating services.
-              </p>
-              <p className="product-price mb-3">
-                <strong>24-Hour Emergency Service</strong>
-              </p>
-              <a href="#contact" className="btn btn-primary  bg-blue-1">
-                <i className="fas fa-phone-alt me-2"></i> Contact Now
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,172 +1,187 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope, faLocationDot, faClock, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    number: "",
-    message: "",
-    services: [],
+    name: "", email: "", number: "", message: "", services: []
   });
 
   const servicesOptions = [
-    "AC Repair",
-    "AC Installation",
-    "AC Service",
-    "HVAC Maintenance",
-    "Duct Cleaning",
+    "AC Installation", "AC Repair", "AC Service",
+    "HVAC Maintenance", "Duct Cleaning"
+  ];
+
+  const contactInfo = [
+    { icon: faPhone, title: "Phone", info: "+91 99630 88128", link: "tel:+919963088128" },
+    { icon: faEnvelope, title: "Email", info: "rajutheking9999@gmail.com", link: "mailto:rajutheking9999@gmail.com" },
+    { icon: faLocationDot, title: "Location", info: "H.NO.2-3-225/A/170, Rahmath Nagar, Yousufguda, Hyderabad" },
+    { icon: faClock, title: "Working Hours", info: "Mon - Sun: 9:00 AM - 9:00 PM" }
   ];
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type === "checkbox") {
-      setFormData((prevState) => {
-        const services = checked
-          ? [...prevState.services, value]
-          : prevState.services.filter((service) => service !== value);
-        return { ...prevState, services };
-      });
+      setFormData(prev => ({
+        ...prev,
+        services: checked 
+          ? [...prev.services, value]
+          : prev.services.filter(service => service !== value)
+      }));
     } else {
-      setFormData({ ...formData, [name]: value });
+      setFormData(prev => ({ ...prev, [name]: value }));
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const serviceID = "service_te7e0vy";
-    const templateID = "template_sxj8mnl";
-    const userID = "Up-XYUI4vUWGqymay";
-
-    const emailData = {
-      ...formData,
-      services: formData.services.join(", "),
-    };
-
-    emailjs
-      .send(serviceID, templateID, emailData, userID)
-      .then((response) => {
-        alert("Your message has been sent successfully!");
-        setFormData({
-          name: "",
-          email: "",
-          number: "",
-          message: "",
-          services: [],
-        });
-      })
-      .catch(() => {
-        alert("Failed to send your message. Please try again later.");
-      });
+    emailjs.send(
+      "service_te7e0vy",
+      "template_sxj8mnl",
+      { ...formData, services: formData.services.join(", ") },
+      "Up-XYUI4vUWGqymay"
+    ).then(() => {
+      setFormData({ name: "", email: "", number: "", message: "", services: [] });
+      alert("Message sent successfully!");
+    });
   };
 
   return (
-    <section className="container my-5" id="contact">
-                <h1 className="display-4 text-center mb-5">Contact Us</h1>
-      <form onSubmit={handleSubmit} className="p-4 shadow rounded bg-blue-1">
-        <div className="row">
-          {/* Name Field */}
-          <div className="col-md-6 mb-3">
-            <label htmlFor="name" className="form-label text-white">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form-control border-0 bg-blue-11 text-white"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
+    <section className="contact-section py-5" id="contact">
+      <div className="container">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-5"
+        >
+          <span className="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 mb-3">
+            Contact Us
+          </span>
+          <h2 className="display-4 fw-bold mb-3">Get In Touch</h2>
+          <p className="lead text-muted mx-auto" style={{ maxWidth: '700px' }}>
+            Ready to experience superior AC services? Contact us today for quick response and professional support.
+          </p>
+        </motion.div>
 
-          {/* Email Field */}
-          <div className="col-md-6 mb-3">
-            <label htmlFor="email" className="form-label text-white">
-              Email
-            </label>
-            <input
-              type="email"
-              className="form-control border-0 bg-blue-11 text-white"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-        </div>
-
-        <div className="row">
-          {/* Phone Number Field */}
-          <div className="col-md-6 mb-3">
-            <label htmlFor="number" className="form-label text-white">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              className="form-control border-0 bg-blue-11 text-white"
-              id="number"
-              name="number"
-              value={formData.number}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          {/* Services Selection */}
-          <div className="col-md-6 mb-3">
-            <label className="form-label text-white">Select Services</label>
-            <div>
-              {servicesOptions.map((service, index) => (
-                <div className="form-check" key={index}>
-                  <input
-                    type="checkbox"
-                    className="form-check-input bg-blue-11 text-white border-0"
-                    id={`service-${index}`}
-                    value={service}
-                    onChange={handleChange}
-                    checked={formData.services.includes(service)}
-                  />
-                  <label
-                    className="form-check-label text-white"
-                    htmlFor={`service-${index}`}
-                  >
-                    {service}
-                  </label>
-                </div>
+        <div className="row g-4">
+          {/* Contact Information */}
+          <div className="col-lg-4">
+            <div className="contact-info-wrapper p-4 rounded-4 bg-light h-100">
+              {contactInfo.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="contact-info-item mb-4"
+                >
+                  <div className="d-flex align-items-center">
+                    <div className="contact-icon-wrapper me-3">
+                      <FontAwesomeIcon icon={item.icon} className="contact-icon" />
+                    </div>
+                    <div>
+                      <h5 className="fw-bold mb-1">{item.title}</h5>
+                      {item.link ? (
+                        <a href={item.link} className="text-muted text-decoration-none">
+                          {item.info}
+                        </a>
+                      ) : (
+                        <p className="text-muted mb-0">{item.info}</p>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Message Field */}
-        <div className="row">
-          <div className="col-12 mb-3">
-            <label htmlFor="message" className="form-label text-white">
-              Message
-            </label>
-            <textarea
-              className="form-control bg-blue-11 text-white border-0"
-              id="message"
-              name="message"
-              rows="4"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
+          {/* Contact Form */}
+          <div className="col-lg-8">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="contact-form-wrapper p-4 rounded-4 bg-white shadow-sm"
+            >
+              <form onSubmit={handleSubmit}>
+                <div className="row g-3">
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      className="form-control form-control-lg"
+                      placeholder="Your Name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      type="email"
+                      className="form-control form-control-lg"
+                      placeholder="Your Email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="col-12">
+                    <input
+                      type="tel"
+                      className="form-control form-control-lg"
+                      placeholder="Phone Number"
+                      name="number"
+                      value={formData.number}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="col-12">
+                    <div className="services-grid mb-3">
+                      {servicesOptions.map((service, index) => (
+                        <div key={index} className="form-check">
+                          <input
+                            type="checkbox"
+                            className="form-check-input"
+                            id={`service-${index}`}
+                            value={service}
+                            checked={formData.services.includes(service)}
+                            onChange={handleChange}
+                          />
+                          <label className="form-check-label" htmlFor={`service-${index}`}>
+                            <FontAwesomeIcon icon={faCheck} className="me-2 text-primary" />
+                            {service}
+                          </label>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <textarea
+                      className="form-control form-control-lg"
+                      rows="4"
+                      placeholder="Your Message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                    ></textarea>
+                  </div>
+                  <div className="col-12">
+                    <button type="submit" className="btn btn-primary btn-lg w-100 rounded-pill">
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </motion.div>
           </div>
         </div>
-
-        {/* Submit Button */}
-        <div className="text-center">
-          <button type="submit" className="btn bg-orange btn-lg text-white">
-            Send Message
-          </button>
-        </div>
-      </form>
+      </div>
     </section>
   );
 };

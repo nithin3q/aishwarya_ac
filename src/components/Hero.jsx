@@ -18,21 +18,28 @@ function Hero() {
         <div
           className="overlay position-absolute w-100 h-100"
           style={{
-            backgroundColor: 'rgba(255, 165, 0, 0.5)', // Orange color with transparency
+            background: 'linear-gradient(45deg, rgba(255, 140, 0, 0.6), rgba(12, 54, 127, 0.8))',
             top: 0,
             left: 0,
             zIndex: 1,
           }}
         ></div>
 
-        <div className="container position-relative text-left text-dark" style={{ zIndex: 2 }}>
-          <h1 className="fw-bold display-4 ">Doorstep AC Repair and Service</h1>
-          <p className="lead my-4 text-hero">
-            Quick and reliable AC repair services delivered at your doorstep. Let us keep you comfortable.
-          </p>
-          <a href="#contact" className="btn bg-blue-1 text-white btn-lg">
-            <FontAwesomeIcon icon={faPhoneAlt} className="me-2" /> Contact Us
-          </a>
+<div className="container position-relative" style={{ zIndex: 2 }}>
+          <div className="row">
+            <div className="col-lg-8 col-md-10">
+              <h1 className="fw-bold display-3 text-white mb-4 animate__animated animate__fadeInUp">
+                Professional AC Repair & Service at Your Doorstep
+              </h1>
+              <p className="lead mb-3 text-white opacity-90 animate__animated animate__fadeInUp animate__delay-1s">
+                Experience quick, reliable, and professional AC repair services delivered right to your doorstep. 
+                Trust our experts to keep your space comfortable all year round.
+              </p>
+              <a href="#contact" className="btn btn-lg px-5 py-3 bg-blue-1 text-white shadow-lg hover-scale animate__animated animate__fadeInUp animate__delay-2s">
+                <FontAwesomeIcon icon={faPhoneAlt} className="me-2" /> Get Free Consultation
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Overlaying Card Section */}

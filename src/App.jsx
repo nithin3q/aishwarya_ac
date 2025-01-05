@@ -14,6 +14,7 @@ import ContactUs from './components/ContactUs';
 import Gallery from './components/Gallery';
 import AboutUs from './components/AboutUs';
 import FAQ from './components/FAQ';
+import './App.css'
 
 function App() {
   return (
